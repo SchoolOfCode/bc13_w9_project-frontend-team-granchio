@@ -4,15 +4,13 @@ import Post from '../Post/post';
 import './forum.css';
 
 function Forum({isShown}) {
-  const [posts, setPosts] = useState([{ posts: '', reversePosts: '' }]);
+  const [posts, setPosts] = useState([]);
+const reversePosts = [...posts].reverse();
 
     async function getData() {
     const response = await fetch('http://localhost:3000/api/posts');
     const data = await response.json();
-    setPosts({
-      posts: [...data.payload],
-      reversePosts: [...data.payload].slice().reverse(),
-    });
+    setPosts(data.payload);
   }
 
   useEffect(() => {
@@ -29,22 +27,22 @@ function Forum({isShown}) {
         posts={posts}
         getData={getData}
       ></CreatePost>
-        <div className="post-container">
-            {posts.reversePosts?.map(function (post) {
-              return (
-                <Post
-                  post_title={post?.post_title}
-                  author={post?.post_id}
-                  content={post?.post_content}
-                  post={post}
-                  getData={getData}
-                />
-              );
-            })}
-        </div>
-      <div className="fix-btn-div">
+      <div className="post-container">
+        {reversePosts.map((post) => (
+          <Post
+            post_title={post.post_title}
+            author={post.post_id}
+            content={post.post_content}
+            post={post}
+            rerender={false}
+            setRerender={() => getData()}
+            key={post.post_id}
+          />
+        ))}
+      </div>
+      <div className="fixed-button-div">
         <a href="#top">
-          <button className="fix-button" type="button">
+          <button className="fixed-button" type="button">
             Back to Top
           </button>
         </a>

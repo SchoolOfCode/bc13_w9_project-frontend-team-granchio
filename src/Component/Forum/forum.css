@@ -33,7 +33,7 @@ background-color: #83bfcd;
 }
 
 
-.fix-button {
+.fixed-button {
     font-size: 0.7em;
     background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
     border-radius: 20px;
@@ -48,7 +48,7 @@ background-color: #83bfcd;
    
 
 }
-.fix-btn-div{
+.fixed-button-div{
     position: fixed;
         bottom: 5vh;
         left: 80vw

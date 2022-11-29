@@ -25,7 +25,7 @@ function CreateComment(props) {
       }),
     }).then(() => {
       setIsShown(true)
-      props.getData()
+      props.setRerender()
       setText("");
     });
   }
