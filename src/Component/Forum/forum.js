@@ -19,7 +19,7 @@ function Forum({isShown}) {
     getData();
   }, []);
   return (
-    <div className="containerALL">
+    <div className="container-all">
       <div className="title-forum">
         <h1 className="read">Read, Post, Comment</h1>
         <h3 className="anon">Anonymously!</h3>
