@@ -20,7 +20,7 @@ function Post(props) {
         </button>
       </div>
       {isExpanded && (
-        <div className="comments">
+        <div className="post-comment-parent-container">
           <p className="post-content">{props.content}</p>
           <CommentList comments={props.post.comments} />
           <CreateComment

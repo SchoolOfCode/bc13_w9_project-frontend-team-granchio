@@ -1,6 +1,6 @@
 .title-forum{
 background-color: #83bfcd;
-    width: 100%;
+    width: 95%;
     height: 100%;
     border-radius: 20px;
     padding: 1px 1px 1px 1px;
@@ -20,21 +20,18 @@ background-color: #83bfcd;
 }
 
 .post-container{
-    background-color: #83bfcd;
+    background-color:#83bfcd;
     align-items: center;
     position:relative;
     width: 100%;
     height: auto;
-    border-radius: 30px;
+    border-radius: 20px;
+    /* padding: 1rem; */
     /* display: flex;
     flex-direction: column;
     justify-content: center; */
 }
 
-.posts-wrapper{
-    background-color: white;
-    border-radius: 30px;
-}
 
 .fix-button {
     font-size: 0.7em;

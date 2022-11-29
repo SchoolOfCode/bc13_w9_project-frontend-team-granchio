@@ -35,11 +35,7 @@ function CreatePost(props) {
 
   return (
     <div className="form-container-parent">
-      <div className="profile-container">
-        <div className="profile"></div>
-      </div>
       <form>
-        <div className="inputs-parent-container">
           <div className="title-div">
             <label>Title</label>
             <br />
@@ -60,7 +56,6 @@ function CreatePost(props) {
               onChange={handleChange}
             ></textarea>
           </div>
-        </div>
       </form>
       <div className="btn-div">
         <button className="button" type="button" onClick={handleClick}>

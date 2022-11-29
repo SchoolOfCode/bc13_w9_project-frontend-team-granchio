@@ -29,10 +29,8 @@ function Forum({isShown}) {
         posts={posts}
         getData={getData}
       ></CreatePost>
-      <div className="posts-wrapper">
         <div className="post-container">
-          <ul>
-            {posts.reversePosts.map(function (post) {
+            {posts.reversePosts?.map(function (post) {
               return (
                 <Post
                   post_title={post?.post_title}
@@ -43,9 +41,7 @@ function Forum({isShown}) {
                 />
               );
             })}
-          </ul>
         </div>
-      </div>
       <div className="fix-btn-div">
         <a href="#top">
           <button className="fix-button" type="button">

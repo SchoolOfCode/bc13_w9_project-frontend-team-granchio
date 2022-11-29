@@ -1,45 +1,29 @@
 .form-container-parent{
-    margin-top: 30px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     background-color: #83bfcd;
     border-radius: 20px;
     width: 100%;
     height: auto;
-    padding: 2px;
+    padding: 2rem 0rem;
     display: flex;
-    flex-direction: row;
-    gap: 50px
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
 }
 input, textarea{
     border: solid 3px white;
     background-color: #83bfcd;
     border-radius: 8px;
-    /* padding: 12px 200px; */
     margin: 8px 0;
-    height: 3em;
-    width: 40em;
-    max-width: 40em;
-    max-height: 8em;
+    height: 3rem;
+    width: 40rem;
+    max-width: 40rem;
+    max-height: 8rem;
     box-sizing: border-box;
-    font-size: 0.5em;
+    font-size: 0.5rem;
 }
 
-.profile-container{
-  height: 60px;
-  width: 20%;
-  line-height: 60px;
-  
-  border-radius: 50px;
-  margin: 10px 5px 10px 5px;
-}
-
-
-.inputs-parent-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
-    gap: 20px
-}
 .title-div{
     text-align: left;
 }
@@ -47,41 +31,22 @@ input, textarea{
 text-align: left;
 }
 
-
-.btn-div{
-align-self: flex-end
-
-}
-.profile-container {
-    font-size: 1em;
-}
-
 .button{
 font-size: 0.7em;
     background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
     border-radius: 20px;
-    color: rgba(255, 255, 255, 0.544);
-    width: 10vw;
+    width: 30vw;
     height: 6vh;
     border-radius: 20px;
     font-family: poppins;
     font-weight: 800;
     border: none;
-  
+    color: white;     
+    
 }
 
 .button:hover{
-    font-size: 0.7em;
-        background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
-        border-radius: 20px;
-        color: white;
-        width: 10vw;
-        height: 6vh;
-        border-radius: 20px;
-        font-family: poppins;
-        font-weight: 800;
-        border: none;
-       
+    color: rgba(255, 255, 255, 0.544);
     }
 
 
