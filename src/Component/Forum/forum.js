@@ -5,20 +5,19 @@ import './forum.css';
 
 function Forum({isShown}) {
   const [posts, setPosts] = useState([{ posts: '', reversePosts: '' }]);
-  const [rerender, setRerender] = useState(true);
+
+    async function getData() {
+    const response = await fetch('http://localhost:3000/api/posts');
+    const data = await response.json();
+    setPosts({
+      posts: [...data.payload],
+      reversePosts: [...data.payload].slice().reverse(),
+    });
+  }
 
   useEffect(() => {
-    async function getData() {
-      const response = await fetch('http://localhost:3000/api/posts');
-      const data = await response.json();
-      console.log(data);
-      setPosts({
-        posts: [...data.payload],
-        reversePosts: [...data.payload].slice().reverse(),
-      });
-    }
     getData();
-  }, [rerender, isShown]);
+  }, []);
   return (
     <div className="containerALL">
       <div className="title-forum">
@@ -28,8 +27,7 @@ function Forum({isShown}) {
       <CreatePost
         setPosts={setPosts}
         posts={posts}
-        rerender={rerender}
-        setRerender={setRerender}
+        getData={getData}
       ></CreatePost>
       <div className="posts-wrapper">
         <div className="post-container">
@@ -41,8 +39,7 @@ function Forum({isShown}) {
                   author={post?.post_id}
                   content={post?.post_content}
                   post={post}
-                  rerender={rerender}
-                  setRerender={setRerender}
+                  getData={getData}
                 />
               );
             })}
