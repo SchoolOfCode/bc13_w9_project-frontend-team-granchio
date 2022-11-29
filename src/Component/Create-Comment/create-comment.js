@@ -23,9 +23,9 @@ function CreateComment(props) {
         post_id: props.post_id,
         comment_content: text,
       }),
-    }).then((response) => {
+    }).then(() => {
       setIsShown(true)
-      props.setRerender(!props.rerender);
+      props.getData()
       setText("");
     });
   }

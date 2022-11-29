@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-//import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
-import newListPost from "../Forum/forum";
 import "./create-post.css";
 
 function CreatePost(props) {
@@ -29,8 +26,8 @@ function CreatePost(props) {
         post_title: title,
         post_content: text,
       }),
-    }).then((response) => {
-      props.setRerender(!props.rerender);
+    }).then(() => {
+      props.getData()
       setText("");
       setTitle("");
     });

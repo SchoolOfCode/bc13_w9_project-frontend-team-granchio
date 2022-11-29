@@ -24,8 +24,7 @@ function Post(props) {
           <p className="post-content">{props.content}</p>
           <CommentList comments={props.post.comments} />
           <CreateComment
-            rerender={props.rerender}
-            setRerender={props.setRerender}
+            getData={props.getData}
             setPosts={props.setPosts}
             posts={props.posts}
             post_id={props.post.post_id}
