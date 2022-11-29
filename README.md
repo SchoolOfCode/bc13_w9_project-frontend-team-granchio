@@ -40,7 +40,7 @@ Cypress
 open two different terminals to navigate to both the backend and the frontend in different port numbers
 
 clone the repo for backend
-```git clone bcw9backend....```
+```https://github.com/SchoolOfCode/bc13_w9_project-backend-team-granchio.git```
 
 clone the repo for frontend
 ```git clone https://github.com/SchoolOfCode/bc13_w9_project-frontend-team-granchio.git```
