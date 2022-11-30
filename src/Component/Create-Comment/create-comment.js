@@ -31,11 +31,9 @@ function CreateComment(props) {
   }
 
   return (
-    <form>
-      <h2 className="create-comment-title">
-        Create a comment
-        <textarea type="text" value={text} onChange={handleChange}></textarea>
-      </h2>
+    <form className="comment-form">
+      <h2 className="create-comment-title">Create a comment</h2>
+      <textarea type="text" value={text} onChange={handleChange}></textarea>
       <Button
         className="comment-button"
         onClick={handleClick}
