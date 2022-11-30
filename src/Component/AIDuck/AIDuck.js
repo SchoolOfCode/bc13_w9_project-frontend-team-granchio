@@ -67,7 +67,7 @@ function CreateDuck(props) {
   return (
     <div className="form-container-parent">
       <form>
-        <label>Robot AI Cyber Ducky</label>
+        <h1>Robot AI Cyber Ducky</h1>
         {submitButtonShown && (
           <textarea
             placeholder="Hello, I am a Duck. What can I do for you?"
@@ -78,7 +78,7 @@ function CreateDuck(props) {
         )}
       </form>
       {isShownDuckReply && (
-        <textarea type="text" value={duckResponse.emotion}></textarea>
+        <textarea type="text" value={duckResponse.emotion} readOnly></textarea>
       )}
       <div className="submit-button-container">
         {submitButtonShown && (
