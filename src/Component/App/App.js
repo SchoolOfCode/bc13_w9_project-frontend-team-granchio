@@ -3,25 +3,29 @@ import './App.css';
 import Button from '../Button/Button';
 import Forum from '../Forum/forum';
 import AIDuck from '../AIDuck/AIDuck.js';
+import homeDuck from "./backtohomepageduck.png";
+import speechDuck from "./duckwithspeach.png";
+
+
 export const UserContext = createContext();
+
 //w3 example of useContext seems to be for components
 //that are in the same file? watch scandiMosh
 //to see if he goes over importing to components that
 //live in another file
 function App() {
 
-  const [isShown, setIsShown] = useState(false);
+  const [isShownForum, setIsShownForum] = useState(false);
   const [AiDuckShown, setAiDuckShown] = useState(false);
   const [showButtonContainer, setshowButtonContainer] = useState(true);
-  const speechDuck = require('./duckwithspeach.png');
-  const homeDuck = require('./backtohomepageduck.png');
+
   const onClick = () => {
-    setIsShown(true);
+    setIsShownForum(true);
     setshowButtonContainer(!showButtonContainer);
   };
   function touchedMaDuck() {
     setshowButtonContainer(!showButtonContainer);
-    setIsShown(false);
+    setIsShownForum(false);
     setAiDuckShown(false);
   }
 
@@ -77,9 +81,9 @@ function App() {
             </div>
           </>
         )}
-        {isShown && (
-          <UserContext.Provider value={setIsShown}>
-            <Forum showForum={onClick} isShown={isShown}></Forum>
+        {isShownForum && (
+          <UserContext.Provider value={setIsShownForum}>
+            <Forum></Forum>
           </UserContext.Provider>
         )}
         <div>{AiDuckShown && <AIDuck></AIDuck>}</div>

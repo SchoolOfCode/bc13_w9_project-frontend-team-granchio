@@ -4,7 +4,7 @@ import Post from '../Post/post';
 import './forum.css';
 import Button from '../Button/Button';
 
-function Forum({isShown}) {
+function Forum() {
   const [posts, setPosts] = useState([]);
 const reversePosts = [...posts].reverse();
 

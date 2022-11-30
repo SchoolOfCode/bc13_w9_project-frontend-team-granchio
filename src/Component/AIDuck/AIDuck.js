@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
 import Button from "../Button/Button";
-import "./AIDuck.css";
+// import "./AIDuck.css";
 
 function CreateDuck(props) {
   const [text, setText] = useState("");

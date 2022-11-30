@@ -31,7 +31,9 @@
 }
 
 .submit-post-button,
-.comment-button, .reset-advice-button, .sumbit-advice-button {
+.comment-button,
+.reset-advice-button,
+.submit-advice-button {
   font-size: 0.7em;
   background: linear-gradient(94.59deg, #ffc529 7.45%, #ffa800 90.71%);
   border-radius: 20px;
@@ -46,7 +48,8 @@
 
 .submit-post-button:hover,
 .comment-button:hover,
-.reset-advice-button:hover, .sumbit-advice-button:hover {
+.reset-advice-button:hover,
+.submit-advice-button:hover {
   color: rgba(255, 255, 255, 0.544);
 }
 
