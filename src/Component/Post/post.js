@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Comment from "../Comment/comment";
 import CreateComment from "../Create-Comment/create-comment";
 import "./post.css";
@@ -16,18 +17,19 @@ function Post(props) {
           <div className="post-author-container">
             <h5 className="post-author">{props.post.duck_name}: </h5>
           </div>
-          {props.post_title}
+          {props.post.post_title}
         </button>
       </div>
       {isExpanded && (
         <div className="post-comment-parent-container">
-          <p className="post-content">{props.content}</p>
+          <p className="post-content">{props.post.post_content}</p>
           <CommentList comments={props.post.comments} />
           <CreateComment
-            rerender={props.rerender}
-            setRerender={props.setRerender}
+            getData={props.getData}
             setPosts={props.setPosts}
-            posts={props.posts}
+            
+            duckName={props.post.comments.duck_name}
+            commment={props.post.comments.comment_content}
             post_id={props.post.post_id}
           />
         </div>
@@ -40,7 +42,7 @@ function CommentList({ comments }) {
   return (
     <div style={{ marginLeft: "32px" }}>
       {comments.map((currentComment) => (
-        <Comment currentComment={currentComment} />
+        <Comment key={uuidv4()} currentComment={currentComment} />
       ))}
     </div>
   );

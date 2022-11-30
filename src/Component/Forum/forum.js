@@ -30,12 +30,8 @@ const reversePosts = [...posts].reverse();
       <div className="post-container">
         {reversePosts.map((post) => (
           <Post
-            post_title={post.post_title}
-            author={post.post_id}
-            content={post.post_content}
             post={post}
-            rerender={false}
-            setRerender={() => getData()}
+            getData={() => getData()}
             key={post.post_id}
           />
         ))}

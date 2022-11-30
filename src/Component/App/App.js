@@ -53,9 +53,11 @@ function App() {
                   <p className="home-desc">
                     Submit your mood to your personal duck to brighten your day
                   </p>
-                  <button className="angry-duck-btn" onClick={onClickDuck}>
-                    Angry Duck
-                  </button>
+                  <Button
+                    className={"angry-duck-button"}
+                    onClick={onClickDuck}
+                    text={"Angry Duck"}
+                  />
                 </div>
               </div>
               <div className="angry-duck-container">
@@ -65,7 +67,11 @@ function App() {
                     Talk anonymously to your fellow bootcampers and share
                     struggles
                   </p>
-                  <Button onClick={onClick} />
+                  <Button
+                    className={"anon-duck"}
+                    text={"Anon Duck"}
+                    onClick={onClick}
+                  />
                 </div>
               </div>
             </div>

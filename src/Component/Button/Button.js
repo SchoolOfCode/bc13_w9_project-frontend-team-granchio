@@ -1,12 +1,14 @@
 import React from 'react';
 import "./button.css"
-export default function Button({onClick}) {
 
+
+
+export default function Button({onClick, text, className}) {
   return (
-    <div>
-      <button className="anon-duck" type="button" onClick={onClick}>
-        Anon Duck
+    <>
+      <button className={className} type="button" onClick={onClick}>
+        {text}
       </button>
-    </div>
+    </>
   );
 }

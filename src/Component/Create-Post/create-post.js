@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./create-post.css";
+import Button from "../Button/Button";
 
 function CreatePost(props) {
   const [contentText, setContentText] = useState("");
@@ -58,12 +59,14 @@ function CreatePost(props) {
             onChange={handleChange}
           ></textarea>
         </div>
+        <div className="btn-div">
+          <Button
+            className="submit-post-button"
+            onClick={handleClick}
+            text={"Submit Post"}
+          ></Button>
+        </div>
       </form>
-      <div className="btn-div">
-        <button className="button" type="button" onClick={handleClick}>
-          Submit Post
-        </button>
-      </div>
     </div>
   );
 }

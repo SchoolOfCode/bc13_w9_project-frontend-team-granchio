@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import "./create-comment.css"
 import {UserContext} from '../App/App.js'
+import Button from "../Button/Button";
 
 function CreateComment(props) {
   const [text, setText] = useState("");
@@ -10,8 +11,8 @@ function CreateComment(props) {
     setText(event.target.value);
   }
 
-  function handleClick() {
-    fetch("http://localhost:3000/api/comments", {
+  async function handleClick() {
+    await fetch("http://localhost:3000/api/comments", {
       method: "post",
       headers: {
         Accept: "application/json",
@@ -25,7 +26,7 @@ function CreateComment(props) {
       }),
     }).then(() => {
       setIsShown(true)
-      props.setRerender()
+      props.getData()
       setText("");
     });
   }
@@ -36,9 +37,8 @@ function CreateComment(props) {
         Create a comment
         <textarea type="text" value={text} onChange={handleChange}></textarea>
       </h2>
-      <button className="comment-btn" type="button" onClick={handleClick}>
-        Post Comment
-      </button>
+      <Button className="comment-button" onClick={handleClick} text={"Post Comment"}>
+      </Button>
     </form>
   );
 }
