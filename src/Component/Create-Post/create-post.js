@@ -64,7 +64,7 @@ function CreatePost(props) {
             className="submit-post-button"
             onClick={handleClick}
             text={"Submit Post"}
-          ></Button>
+         />
         </div>
       </form>
     </div>

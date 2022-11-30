@@ -2,7 +2,7 @@ import { useState, createContext } from 'react';
 import './App.css';
 import Button from '../Button/Button';
 import Forum from '../Forum/forum';
-import AIDuck from './AIDuck/AIDuck.js';
+import AIDuck from '../AIDuck/AIDuck.js';
 export const UserContext = createContext();
 //w3 example of useContext seems to be for components
 //that are in the same file? watch scandiMosh

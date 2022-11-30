@@ -26,30 +26,6 @@ background-color: #83bfcd;
     width: 100%;
     height: auto;
     border-radius: 20px;
-    /* padding: 1rem; */
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center; */
 }
 
 
-.fixed-button {
-    font-size: 0.7em;
-    background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
-    border-radius: 20px;
-    color: white;
-    width: 10vw;
-    height: 6vh;
-    border-radius: 20px;
-    font-family: poppins;
-    font-weight: 800;
-    border: none;
-    position: sticky;
-   
-
-}
-.fixed-button-div{
-    position: fixed;
-        bottom: 5vh;
-        left: 80vw
-}

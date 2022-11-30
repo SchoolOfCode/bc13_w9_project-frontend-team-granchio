@@ -1,54 +1,71 @@
 .anon-duck {
-    font-size: 1em;
-    background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
-    border-radius: 20px;
-    box-shadow: 0 5px gray;
-    color: white;
-    width: 20vw;
-    height: 10vh;
-    border-radius: 20px;
-    font-family: poppins;
+  font-size: 1em;
+  background: linear-gradient(94.59deg, #ffc529 7.45%, #ffa800 90.71%);
+  border-radius: 20px;
+  box-shadow: 0 5px gray;
+  color: white;
+  width: 20vw;
+  height: 10vh;
+  border-radius: 20px;
+  font-family: poppins;
 }
 
 .anon-duck:active {
-    box-shadow: 0 2px gray;
-    transform: translateY(4px);
+  box-shadow: 0 2px gray;
+  transform: translateY(4px);
 }
 
 .angry-duck-button {
-    background: linear-gradient(94.59deg, #FE9D4B 7.45%, #F17105 90.71%);
-    border-radius: 20px;
-    width: 20vw;
-    height: 10vh;
-    color: white;
-    box-shadow: 0 5px gray;
-    font-family: poppins;
-    font-size: 1em;
-
-
+  background: linear-gradient(94.59deg, #fe9d4b 7.45%, #f17105 90.71%);
+  border-radius: 20px;
+  width: 20vw;
+  height: 10vh;
+  color: white;
+  box-shadow: 0 5px gray;
+  font-family: poppins;
+  font-size: 1em;
 }
-.angry-duck-button:active
-{
-        box-shadow: 0 2px gray;
-        transform: translateY(4px);
-    }
+.angry-duck-button:active {
+  box-shadow: 0 2px gray;
+  transform: translateY(4px);
+}
 
-        .submit-post-button, .comment-button {
-            font-size: 0.7em;
-            background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
-            border-radius: 20px;
-            width: 30vw;
-            height: 6vh;
-            border-radius: 20px;
-            font-family: poppins;
-            font-weight: 800;
-            border: none;
-            color: white;
-    
-        }
-    
-        .submit-post-button:hover, .comment-button:hover {
-            color: rgba(255, 255, 255, 0.544);
-        }
+.submit-post-button,
+.comment-button, .reset-advice-button, .sumbit-advice-button {
+  font-size: 0.7em;
+  background: linear-gradient(94.59deg, #ffc529 7.45%, #ffa800 90.71%);
+  border-radius: 20px;
+  width: 30vw;
+  height: 6vh;
+  border-radius: 20px;
+  font-family: poppins;
+  font-weight: 800;
+  border: none;
+  color: white;
+}
 
-            
+.submit-post-button:hover,
+.comment-button:hover,
+.reset-advice-button:hover, .sumbit-advice-button:hover {
+  color: rgba(255, 255, 255, 0.544);
+}
+
+.fixed-button {
+  font-size: 0.7em;
+  background: linear-gradient(94.59deg, #ffc529 7.45%, #ffa800 90.71%);
+  border-radius: 20px;
+  color: white;
+  width: 15vw;
+  height: 6vh;
+  border-radius: 20px;
+  font-family: poppins;
+  font-weight: 800;
+  border: none;
+  position: sticky;
+}
+
+.fixed-button-div {
+  position: fixed;
+  bottom: 5vh;
+  left: 80vw;
+}

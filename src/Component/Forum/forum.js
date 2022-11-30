@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import CreatePost from '../Create-Post/create-post';
 import Post from '../Post/post';
 import './forum.css';
+import Button from '../Button/Button';
 
 function Forum({isShown}) {
   const [posts, setPosts] = useState([]);
@@ -38,9 +39,8 @@ const reversePosts = [...posts].reverse();
       </div>
       <div className="fixed-button-div">
         <a href="#top">
-          <button className="fixed-button" type="button">
-            Back to Top
-          </button>
+          <Button className="fixed-button" text={"Back To Top"}>
+          </Button>
         </a>
       </div>
     </div>
