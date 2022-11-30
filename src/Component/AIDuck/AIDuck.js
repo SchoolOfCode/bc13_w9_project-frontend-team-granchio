@@ -3,8 +3,8 @@ import Button from "../Button/Button";
 // import "./AIDuck.css";
 
 function CreateDuck(props) {
-  const [text, setText] = useState("");
-  const [isShown, setIsShown] = useState(false);
+  const [userInput, setUserInput] = useState("");
+  const [isShownDuckReply, setIsShownDuckReply] = useState(false);
   const [submitButtonShown, setSubmitButtonShown] = useState(true);
   const [resetButtonShown, setResetButtonShown] = useState(false);
   const sadKeanu =
@@ -13,10 +13,13 @@ function CreateDuck(props) {
     "https://sayingimages.com/wp-content/uploads/super-happy-memes.jpg";
   const robotimg =
     "https://thumbs.dreamstime.com/b/cartoon-silly-robot-looking-55524172.jpg";
-  const [state, dispatch] = useReducer(reducer, { emotion: "", image: "" });
+  const [duckResponse, dispatch] = useReducer(reducer, {
+    emotion: "",
+    image: "",
+  });
 
-  function reducer(state, action) {
-    switch (action.string) {
+  function reducer(duckResponse, action) {
+    switch (action.keyWord) {
       case "happy":
         return {
           emotion: "I am so glad you are happy!! Check this out...",
@@ -34,24 +37,23 @@ function CreateDuck(props) {
         };
     }
   }
-  console.log(state);
 
-  function handleChange(event) {
-    setText(event.target.value);
+  function handleUserInputTextChange(event) {
+    setUserInput(event.target.value);
   }
 
-  function identifyKeyWords(userString) {
+  function identifyKeyWords(userInput) {
     const keyWords = ["happy", "sad"];
-    const stringArray = userString.split(" ");
+    const stringArray = userInput.split(" ");
     const matchArray = keyWords.filter((word) => stringArray.includes(word));
-    dispatch({ string: matchArray[0] }); //for now just the first word found
+    dispatch({ keyWord: matchArray[0] }); //for now just the first word found
   }
 
-  function handleClick() {
+  function handleClickGetAdvice() {
     //calls function with state
-    identifyKeyWords(text);
-    setIsShown(!isShown);
-    setText("");
+    identifyKeyWords(userInput);
+    setIsShownDuckReply(!isShownDuckReply);
+    setUserInput("");
     setResetButtonShown(!resetButtonShown);
     setSubmitButtonShown(!submitButtonShown);
   }
@@ -59,58 +61,50 @@ function CreateDuck(props) {
   function handleClickReset() {
     setResetButtonShown(!resetButtonShown);
     setSubmitButtonShown(!submitButtonShown);
-    setIsShown(!isShown);
+    setIsShownDuckReply(!isShownDuckReply);
   }
 
   return (
     <div className="form-container-parent">
-      <div className="profile-container">
-        <div className="profile"></div>
-      </div>
       <form>
-        <div className="inputs-parent-container">
-          <br />
-        </div>
-        <div className="content-div">
-          <label>Robot AI Cyber Ducky</label>
-          <br />
-          {submitButtonShown && (
-            <textarea
-              placeholder="Hello, I am a Duck. What can I do for you?"
-              type="text"
-              value={text}
-              onChange={handleChange}
-            ></textarea>
-          )}
-          {isShown && <textarea type="text" value={state.emotion}></textarea>}
-        </div>
+        <label>Robot AI Cyber Ducky</label>
+        {submitButtonShown && (
+          <textarea
+            placeholder="Hello, I am a Duck. What can I do for you?"
+            type="text"
+            value={userInput}
+            onChange={handleUserInputTextChange}
+          ></textarea>
+        )}
       </form>
-      <div className="btn-div">
+      {isShownDuckReply && (
+        <textarea type="text" value={duckResponse.emotion}></textarea>
+      )}
+      <div className="submit-button-container">
         {submitButtonShown && (
           <Button
             className="submit-advice-button"
             text={"Click for helpful duck advice"}
-            onClick={handleClick}
+            onClick={handleClickGetAdvice}
           />
-        )}
-        {resetButtonShown && (
-          <Button
-            className="reset-advice-button"
-            onClick={handleClickReset}
-            text={"Need more robot advice?"}
-          />
-        )}
-
-        {resetButtonShown && (
-          <div>
-            <img
-              alt="happy/sad"
-              src={state.image}
-              style={{ height: "400px" }}
-            />
-          </div>
         )}
       </div>
+      {resetButtonShown && (
+        <Button
+          className="reset-advice-button"
+          onClick={handleClickReset}
+          text={"Need more robot advice?"}
+        />
+      )}
+      {resetButtonShown && (
+        <div>
+          <img
+            alt="happy/sad"
+            src={duckResponse.image}
+            style={{ height: "400px" }}
+          />
+        </div>
+      )}
     </div>
   );
 }

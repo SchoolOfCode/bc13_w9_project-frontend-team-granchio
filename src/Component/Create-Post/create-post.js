@@ -22,7 +22,6 @@ function CreatePost(props) {
         "Content-Type": "application/json",
       },
 
-      //make sure to serialize your JSON body
       body: JSON.stringify({
         post_title: title,
         post_content: contentText,
@@ -64,7 +63,7 @@ function CreatePost(props) {
             className="submit-post-button"
             onClick={handleClick}
             text={"Submit Post"}
-         />
+          />
         </div>
       </form>
     </div>

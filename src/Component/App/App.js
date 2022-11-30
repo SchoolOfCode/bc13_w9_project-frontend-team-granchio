@@ -1,11 +1,10 @@
-import { useState, createContext } from 'react';
-import './App.css';
-import Button from '../Button/Button';
-import Forum from '../Forum/forum';
-import AIDuck from '../AIDuck/AIDuck.js';
+import { useState, createContext } from "react";
+import "./App.css";
+import Button from "../Button/Button";
+import Forum from "../Forum/forum";
+import AIDuck from "../AIDuck/AIDuck.js";
 import homeDuck from "./backtohomepageduck.png";
 import speechDuck from "./duckwithspeach.png";
-
 
 export const UserContext = createContext();
 
@@ -14,7 +13,6 @@ export const UserContext = createContext();
 //to see if he goes over importing to components that
 //live in another file
 function App() {
-
   const [isShownForum, setIsShownForum] = useState(false);
   const [AiDuckComponentShown, setAiDuckComponentShown] = useState(false);
   const [showLandingPage, setShowLandingPage] = useState(true);
@@ -23,21 +21,22 @@ function App() {
     setIsShownForum(true);
     setShowLandingPage(!showLandingPage);
   };
-  function touchedMaDuck() {
+
+  function resetToHomepage() {
     setShowLandingPage(!showLandingPage);
     setIsShownForum(false);
     setAiDuckComponentShown(false);
   }
 
-  function onClickDuck() {
+  function onClickAngryDuck() {
     setShowLandingPage(!showLandingPage);
     setAiDuckComponentShown(true);
   }
 
-  let toClickorNotToCLick = () =>
+  const toggleHomepage = () =>
     showLandingPage
       ? console.log("don't touch my duck dude.")
-      : touchedMaDuck();
+      : resetToHomepage();
 
   return (
     <header className="App-header">
@@ -46,7 +45,7 @@ function App() {
           className="duck-img"
           alt="Duck says How are you feeling today?"
           src={showLandingPage ? speechDuck : homeDuck}
-          onClick={toClickorNotToCLick}
+          onClick={toggleHomepage}
         />
         {showLandingPage && (
           <>
@@ -59,7 +58,7 @@ function App() {
                   </p>
                   <Button
                     className={"angry-duck-button"}
-                    onClick={onClickDuck}
+                    onClick={onClickAngryDuck}
                     text={"Angry Duck"}
                   />
                 </div>

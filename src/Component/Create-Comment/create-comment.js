@@ -1,11 +1,11 @@
 import { useState, useContext } from "react";
-import "./create-comment.css"
-import {UserContext} from '../App/App.js'
+import "./create-comment.css";
+import { UserContext } from "../App/App.js";
 import Button from "../Button/Button";
 
 function CreateComment(props) {
   const [text, setText] = useState("");
-  const setIsShown = useContext(UserContext)
+  const setIsShown = useContext(UserContext);
 
   function handleChange(event) {
     setText(event.target.value);
@@ -18,15 +18,13 @@ function CreateComment(props) {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-
-      //make sure to serialize your JSON body
       body: JSON.stringify({
         post_id: props.post_id,
         comment_content: text,
       }),
     }).then(() => {
-      setIsShown(true)
-      props.getData()
+      setIsShown(true);
+      props.getData();
       setText("");
     });
   }
@@ -37,8 +35,11 @@ function CreateComment(props) {
         Create a comment
         <textarea type="text" value={text} onChange={handleChange}></textarea>
       </h2>
-      <Button className="comment-button" onClick={handleClick} text={"Post Comment"}>
-      </Button>
+      <Button
+        className="comment-button"
+        onClick={handleClick}
+        text={"Post Comment"}
+      ></Button>
     </form>
   );
 }
