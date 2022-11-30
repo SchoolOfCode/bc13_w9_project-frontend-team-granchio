@@ -4,6 +4,7 @@ import Comment from "../Comment/comment";
 import CreateComment from "../Create-Comment/create-comment";
 import "./post.css";
 
+/** This expands the posts which includes the comments */
 function Post(props) {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -27,7 +28,6 @@ function Post(props) {
           <CreateComment
             getData={props.getData}
             setPosts={props.setPosts}
-            
             duckName={props.post.comments.duck_name}
             commment={props.post.comments.comment_content}
             post_id={props.post.post_id}

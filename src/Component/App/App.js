@@ -2,7 +2,7 @@ import { useState, createContext } from "react";
 import "./App.css";
 import Button from "../Button/Button";
 import Forum from "../Forum/forum";
-import AIDuck from "../AIDuck/AIDuck.js";
+import CreateAiDuck from "../AIDuck/AIDuck.js";
 import homeDuck from "./backtohomepageduck.png";
 import speechDuck from "./duckwithspeach.png";
 
@@ -17,22 +17,29 @@ function App() {
   const [AiDuckComponentShown, setAiDuckComponentShown] = useState(false);
   const [showLandingPage, setShowLandingPage] = useState(true);
 
+  /** this will render the correct component and unrender components no longer in use */
   const onClickShowForum = () => {
     setIsShownForum(true);
     setShowLandingPage(!showLandingPage);
   };
 
-  function resetToHomepage() {
-    setShowLandingPage(!showLandingPage);
-    setIsShownForum(false);
-    setAiDuckComponentShown(false);
-  }
-
+  /** This function causes the AngryDuckAi to render and removes the landing page component from rendering
+   */
   function onClickAngryDuck() {
     setShowLandingPage(!showLandingPage);
     setAiDuckComponentShown(true);
   }
 
+  /** triggered by toggleHomepage below */
+  function resetToHomepage() {
+    setShowLandingPage(!showLandingPage);
+    setIsShownForum(false);
+    setAiDuckComponentShown(false);
+  }
+  /** This ternary routes logic dependant on whether the landing page is shown or not. If it's not shown
+   * it will call the function resetToHomepage, which will in turn return the user to the homepage by
+   * rendering the correct components and undrendering the ones no longer in use
+   */
   const toggleHomepage = () =>
     showLandingPage
       ? console.log("don't touch my duck dude.")
@@ -85,7 +92,7 @@ function App() {
             <Forum></Forum>
           </UserContext.Provider>
         )}
-        <div>{AiDuckComponentShown && <AIDuck></AIDuck>}</div>
+        <div>{AiDuckComponentShown && <CreateAiDuck></CreateAiDuck>}</div>
       </div>
     </header>
   );

@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import CreatePost from '../Create-Post/create-post';
-import Post from '../Post/post';
-import './forum.css';
-import Button from '../Button/Button';
+import React, { useState, useEffect } from "react";
+import CreatePost from "../Create-Post/create-post";
+import Post from "../Post/post";
+import "./forum.css";
+import Button from "../Button/Button";
 
 function Forum() {
   const [posts, setPosts] = useState([]);
-const reversePosts = [...posts].reverse();
+  const reversePosts = [...posts].reverse();
 
-    async function getData() {
-    const response = await fetch('http://localhost:3000/api/posts');
+  async function getData() {
+    const response = await fetch("http://localhost:3000/api/posts");
     const data = await response.json();
     setPosts(data.payload);
   }
-
+  /** this is a useEffect to ensure that getData renders */
   useEffect(() => {
     getData();
   }, []);
@@ -30,17 +30,12 @@ const reversePosts = [...posts].reverse();
       ></CreatePost>
       <div className="post-container">
         {reversePosts.map((post) => (
-          <Post
-            post={post}
-            getData={() => getData()}
-            key={post.post_id}
-          />
+          <Post post={post} getData={() => getData()} key={post.post_id} />
         ))}
       </div>
       <div className="fixed-button-div">
         <a href="#top">
-          <Button className="fixed-button" text={"Back To Top"}>
-          </Button>
+          <Button className="fixed-button" text={"Back To Top"}></Button>
         </a>
       </div>
     </div>

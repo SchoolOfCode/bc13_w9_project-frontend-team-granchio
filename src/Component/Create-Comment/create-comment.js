@@ -11,6 +11,7 @@ function CreateComment(props) {
     setText(event.target.value);
   }
 
+  /** this posts a new comment to the db */
   async function handleClick() {
     await fetch("http://localhost:3000/api/comments", {
       method: "post",

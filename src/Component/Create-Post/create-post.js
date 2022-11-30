@@ -14,6 +14,7 @@ function CreatePost(props) {
     setTitle(event.target.value);
   }
 
+  /** this posts a new post, to the db */
   async function handleClick() {
     await fetch("http://localhost:3000/api/posts", {
       method: "post",

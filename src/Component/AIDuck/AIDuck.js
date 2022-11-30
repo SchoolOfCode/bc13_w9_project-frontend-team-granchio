@@ -2,7 +2,8 @@ import React, { useState, useReducer } from "react";
 import Button from "../Button/Button";
 // import "./AIDuck.css";
 
-function CreateDuck(props) {
+/** This component function creates/renders a ROBOT AI CYBER DUCK that accepts user inputs and returns funnies*/
+function CreateAiDuck() {
   const [userInput, setUserInput] = useState("");
   const [isShownDuckReply, setIsShownDuckReply] = useState(false);
   const [submitButtonShown, setSubmitButtonShown] = useState(true);
@@ -18,6 +19,9 @@ function CreateDuck(props) {
     image: "",
   });
 
+  /** This reducer function takes in the input of a string give by a user and returns a
+   * relevant image and reply based upon keywords in that string
+   */
   function reducer(duckResponse, action) {
     switch (action.keyWord) {
       case "happy":
@@ -37,11 +41,14 @@ function CreateDuck(props) {
         };
     }
   }
-
+  /** This takes in a user input that replies to a question and saves it to a state to be used later*/
   function handleUserInputTextChange(event) {
     setUserInput(event.target.value);
   }
 
+  /** This function takes a string and outputs a keyword
+   * @param {state} userInput This is a state that holds a string input given by the user through an event handler
+   */
   function identifyKeyWords(userInput) {
     const keyWords = ["happy", "sad"];
     const stringArray = userInput.split(" ");
@@ -109,4 +116,4 @@ function CreateDuck(props) {
   );
 }
 
-export default CreateDuck;
+export default CreateAiDuck;
