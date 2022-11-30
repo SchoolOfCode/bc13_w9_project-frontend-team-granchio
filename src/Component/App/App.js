@@ -16,26 +16,26 @@ export const UserContext = createContext();
 function App() {
 
   const [isShownForum, setIsShownForum] = useState(false);
-  const [AiDuckShown, setAiDuckShown] = useState(false);
-  const [showButtonContainer, setshowButtonContainer] = useState(true);
+  const [AiDuckComponentShown, setAiDuckComponentShown] = useState(false);
+  const [showLandingPage, setShowLandingPage] = useState(true);
 
-  const onClick = () => {
+  const onClickShowForum = () => {
     setIsShownForum(true);
-    setshowButtonContainer(!showButtonContainer);
+    setShowLandingPage(!showLandingPage);
   };
   function touchedMaDuck() {
-    setshowButtonContainer(!showButtonContainer);
+    setShowLandingPage(!showLandingPage);
     setIsShownForum(false);
-    setAiDuckShown(false);
+    setAiDuckComponentShown(false);
   }
 
   function onClickDuck() {
-    setshowButtonContainer(!showButtonContainer);
-    setAiDuckShown(true);
+    setShowLandingPage(!showLandingPage);
+    setAiDuckComponentShown(true);
   }
 
   let toClickorNotToCLick = () =>
-    showButtonContainer
+    showLandingPage
       ? console.log("don't touch my duck dude.")
       : touchedMaDuck();
 
@@ -45,10 +45,10 @@ function App() {
         <img
           className="duck-img"
           alt="Duck says How are you feeling today?"
-          src={showButtonContainer ? speechDuck : homeDuck}
+          src={showLandingPage ? speechDuck : homeDuck}
           onClick={toClickorNotToCLick}
         />
-        {showButtonContainer && (
+        {showLandingPage && (
           <>
             <div className="home-container">
               <div className="anon-duck-container">
@@ -74,7 +74,7 @@ function App() {
                   <Button
                     className={"anon-duck"}
                     text={"Anon Duck"}
-                    onClick={onClick}
+                    onClick={onClickShowForum}
                   />
                 </div>
               </div>
@@ -86,7 +86,7 @@ function App() {
             <Forum></Forum>
           </UserContext.Provider>
         )}
-        <div>{AiDuckShown && <AIDuck></AIDuck>}</div>
+        <div>{AiDuckComponentShown && <AIDuck></AIDuck>}</div>
       </div>
     </header>
   );
