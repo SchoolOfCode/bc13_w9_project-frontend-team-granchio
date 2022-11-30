@@ -1,3 +1,17 @@
+.post-title-button {
+  background-color: #83bfcd;
+  width: 100%;
+  padding: 0.5em;
+  font-size: 1em;
+  align-items: center;
+  border-width: 0px 0px 1px 0;
+  border-color: rgb(33, 157, 188);
+  color: white;
+  font-weight: 800;
+  text-align: left;
+  border-radius: 20px;
+}
+
 .post {
   align-items: center;
   border-radius: 5px;
