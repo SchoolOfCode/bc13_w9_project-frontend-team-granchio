@@ -1,65 +1,64 @@
-# Authors 
-- Federica Costantino - @ricacostt
-- Chris Sanger - @C0dingChris
-- Nicholas Pervez - @nicholaspervez
-- Mike Charalambides - @MikeChara
+# Rubbery Ducky App
 
-# Granchio
-
-Granchio is a platform where you can read, publish and comment completely anonymously.
-It is a blog aimed at allowing people to express problems, feelings, frustrations or just to have fun among us bootcampers.
-It also has an extra function that has the sole purpose of giving you feedback based on your mood, laughter is never enough!
+Rubbery Ducky is a platform where you can read, publish and comment completely anonymously. It is a blog aimed at allowing people to express problems, feelings, frustrations or just to have fun among us bootcampers. It also has an extra function that has the sole purpose of giving you feedback based on your mood, laughter is never enough!
 
 ## The problem
-Sometimes the bootcamp’s rhythms can be stressful.
-Some people are not comfortable sharing their problems publicly and it's never easy ask for mental health support.
+The Bootcamp is running fast, and the rhythms are challenging. There may be moments of discouragement; some may feel difficult to share how they think, ask someone for help or even appear on social media.
 
-## The solution
-Create an app where bootcamper are free to the support they need in a complete anonymous way and/or with the help of a rubbery angry ducky!
+## The insight
+create an app where boot campers can find all the support they require, be free to express themselves, and sustain others by posting and commenting anonymously.
 
-## project management tools and design
-Trello,
-Figma,
-Excalidraw
-## Languages
-HTML 5,
-CSS3,
-JavaScript
-## Frameworks & Libraries
-Node.js,
-Nodemon,
-Pg,
-Dotenv,
-Express.js,
-React.js,
-Jest,
-Cypress
+## Authors
 
-# Run Locally
+- Federica Costantino - [@ricacostt](https://github.com/ricacostt)
+- Mike Charalambides - [@MikeChara](https://github.com/MikeChara)
+- Chris Sanger - [@C0dingChris](https://github.com/C0dingChris)
+- Nicholas Pervez - [@nicholaspervez](https://github.com/nicholaspervez)
 
-open two different terminals to navigate to both the backend and the frontend in different port numbers
+## Tech Stack
 
-clone the repo for backend
-```https://github.com/SchoolOfCode/bc13_w9_project-backend-team-granchio.git```
+**Tools:** Trello, Figma, Excalidraw. 
 
-clone the repo for frontend
-```git clone https://github.com/SchoolOfCode/bc13_w9_project-frontend-team-granchio.git```
+**Languages:** HTML 5, CSS3, JavaScript. 
 
-install dependencies in both of the repos
-```npm install```
+**Client:** React. 
 
-run this command in both the backend and frontend
-```npm start```
+**Server:** Node,js, Express.js, Pg, Nodemon, Dotenv. 
 
-# Testing
-End-to-end tests were run using Cypress Library
+**Testing:** Postman, Jest, Supertest, Cypress
 
-run cypress
-```npx run cypress:open```
 
-Unit tests were run using Jest
-```npm test```
+## Run Locally
+Clone both backend and frontend in two separate directories
+```bash
+backend: git clone https://github.com/SchoolOfCode/bc13_w9_project-backend-team-granchio.git
+frontend: git clone https://github.com/SchoolOfCode/bc13_w9_project-frontend-team-granchio.git
+```
 
+Add your personal .env file to include the sensible information.
+
+
+Install dependencies in both repos
+
+```bash
+  npm install
+```
+
+Start the server in both repos. Make sure you run the backend first (it will run on port 3000) and after the frontend (it will run in a different port)
+
+```bash
+  npm start
+```
+
+### Run tests 
+backend:
+```bash
+  npm test
+```
+frontend: 
+```bash
+  npx run cypress:open
+```
 
 # The app
 
