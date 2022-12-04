@@ -5,6 +5,7 @@ import Forum from "../Forum/forum";
 import CreateAiDuck from "../AIDuck/AIDuck.js";
 import homeDuck from "./backtohomepageduck.png";
 import speechDuck from "./duckwithspeach.png";
+import Home from "../../pages/home";
 
 export const UserContext = createContext();
 
@@ -48,6 +49,7 @@ function App() {
   return (
     <header className="App-header">
       <div className="App">
+      <Home/>
         <img
           className="duck-img"
           alt="Duck says How are you feeling today?"
