@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import Comment from "../Comment/comment";
 import CreateComment from "../Create-Comment/create-comment";
 import "./post.css";
@@ -41,8 +40,8 @@ function Post(props) {
 function CommentList({ comments }) {
   return (
     <div style={{ marginLeft: "32px" }}>
-      {comments.map((currentComment) => (
-        <Comment key={uuidv4()} currentComment={currentComment} />
+      {comments.map((currentComment, i) => (
+        <Comment key={i} currentComment={currentComment} />
       ))}
     </div>
   );

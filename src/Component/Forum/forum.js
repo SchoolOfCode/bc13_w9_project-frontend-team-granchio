@@ -8,15 +8,16 @@ function Forum() {
   const [posts, setPosts] = useState([]);
   const reversePosts = [...posts].reverse();
 
+  /** this is a useEffect to ensure that getData renders */
   async function getData() {
     const response = await fetch("http://localhost:3000/api/posts");
     const data = await response.json();
     setPosts(data.payload);
   }
-  /** this is a useEffect to ensure that getData renders */
   useEffect(() => {
     getData();
-  }, []);
+  }, [posts]);
+
   return (
     <div className="container-all">
       <div className="title-forum">
@@ -30,7 +31,11 @@ function Forum() {
       ></CreatePost>
       <div className="post-container">
         {reversePosts.map((post) => (
-          <Post post={post} getData={() => getData()} key={post.post_id} />
+          <Post
+            post={post}
+            onPostCreated={() => getData()}
+            key={post.post_id}
+          />
         ))}
       </div>
       <div className="fixed-button-div">

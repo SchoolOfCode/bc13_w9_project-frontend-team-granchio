@@ -28,7 +28,7 @@ function CreatePost(props) {
         post_content: contentText,
       }),
     }).then(() => {
-      props.getData();
+      props.onPostCreated();
       setContentText("");
       setTitle("");
     });
