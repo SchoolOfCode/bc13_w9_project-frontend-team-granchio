@@ -13,7 +13,7 @@ function CreateComment(props) {
 
   /** this posts a new comment to the db */
   async function handleClick() {
-    await fetch("http://localhost:3000/api/comments", {
+    await fetch("https://granchinooo.onrender.com/api/comments", {
       method: "post",
       headers: {
         Accept: "application/json",

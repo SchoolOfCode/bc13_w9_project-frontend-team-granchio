@@ -16,7 +16,7 @@ function CreatePost(props) {
 
   /** this posts a new post, to the db */
   async function handleClick() {
-    await fetch("http://localhost:3000/api/posts", {
+    await fetch("https://granchinooo.onrender.com/api/posts", {
       method: "post",
       headers: {
         Accept: "application/json",

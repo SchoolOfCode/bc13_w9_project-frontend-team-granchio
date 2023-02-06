@@ -10,7 +10,7 @@ function Forum() {
 
   /** this is a useEffect to ensure that getData renders */
   async function getData() {
-    const response = await fetch("http://localhost:3000/api/posts");
+    const response = await fetch("https://granchinooo.onrender.com/api/posts");
     const data = await response.json();
     setPosts(data.payload);
   }
