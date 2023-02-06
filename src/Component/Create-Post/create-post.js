@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./create-post.css";
 import Button from "../Button/Button";
-
+const REACT_APP_BACKEND_LINK = process.env.REACT_APP_BACKEND_LINK;
 function CreatePost(props) {
   const [contentText, setContentText] = useState("");
   const [title, setTitle] = useState("");
@@ -16,7 +16,7 @@ function CreatePost(props) {
 
   /** this posts a new post, to the db */
   async function handleClick() {
-    await fetch("https://granchinooo.onrender.com/api/posts", {
+    await fetch(`${REACT_APP_BACKEND_LINK}/api/posts`, {
       method: "post",
       headers: {
         Accept: "application/json",

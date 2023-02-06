@@ -3,17 +3,19 @@ import "./create-comment.css";
 import { UserContext } from "../App/App.js";
 import Button from "../Button/Button";
 
+const REACT_APP_BACKEND_LINK = process.env.REACT_APP_BACKEND_LINK;
+
 function CreateComment(props) {
   const [text, setText] = useState("");
   const setIsShown = useContext(UserContext);
-
+  
   function handleChange(event) {
     setText(event.target.value);
   }
 
   /** this posts a new comment to the db */
   async function handleClick() {
-    await fetch("https://granchinooo.onrender.com/api/comments", {
+    await fetch(`${REACT_APP_BACKEND_LINK}/api/comments`, {
       method: "post",
       headers: {
         Accept: "application/json",

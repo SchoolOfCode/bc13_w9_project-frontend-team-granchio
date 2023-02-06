@@ -3,14 +3,14 @@ import CreatePost from "../Create-Post/create-post";
 import Post from "../Post/post";
 import "./forum.css";
 import Button from "../Button/Button";
+const REACT_APP_BACKEND_LINK = process.env.REACT_APP_BACKEND_LINK;
 
 function Forum() {
   const [posts, setPosts] = useState([]);
   const reversePosts = [...posts].reverse();
-
   /** this is a useEffect to ensure that getData renders */
   async function getData() {
-    const response = await fetch("https://granchinooo.onrender.com/api/posts");
+    const response = await fetch(`${REACT_APP_BACKEND_LINK}/api/posts`);
     const data = await response.json();
     setPosts(data.payload);
   }

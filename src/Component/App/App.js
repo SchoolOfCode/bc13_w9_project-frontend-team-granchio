@@ -5,7 +5,9 @@ import Forum from "../Forum/forum";
 import CreateAiDuck from "../AIDuck/AIDuck.js";
 import homeDuck from "./backtohomepageduck.png";
 import speechDuck from "./duckwithspeach.png";
-
+// import * as dotenv from 'dotenv' // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+// dotenv.config()
+// import express from 'express'
 export const UserContext = createContext();
 
 //w3 example of useContext seems to be for components
