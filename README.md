@@ -70,18 +70,14 @@ frontend:
 
 # The app
 
-![Schermata 2022-11-24 alle 22 13 09](https://user-images.githubusercontent.com/111753918/203869462-d1a98a39-0051-42ed-bf82-bd627ce30851.png)
+![Schermata 2022-11-24 alle 22 13 09](https://github.com/SchoolOfCode/bc13_w9_project-backend-team-granchio/blob/main/HomePage.jpg)
 
-
+### Granchio HomePage
 There are mainly two options:
-
 - Anon Duck: Anon Forum to read, add and comment
-- Angry Duck: submit your mood and receive a feedback from a ducky robot. 
+- Angry Duck: submit your mood and receive a feedback from a ducky robot
 
-
-### Rubbery Ducky HomePage
-
-![Schermata 2022-11-24 alle 22 18 59](https://user-images.githubusercontent.com/111753918/203869775-061e08da-8677-4798-819f-52f3d9df19de.png)
+![Schermata 2022-11-24 alle 22 18 59](https://github.com/SchoolOfCode/bc13_w9_project-backend-team-granchio/blob/main/FormPage.jpg)
 
 This is one of the component created: create a new Post.
 Just write a title and a content and press the Submit Post!
