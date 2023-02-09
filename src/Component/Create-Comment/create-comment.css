@@ -3,12 +3,18 @@
 }
 
 
-input{
-    
-    max-width: 774px;
-    min-width: 774px;
-    max-height: 114px;
-    min-height: 50px;
+.custom-input{
+    background-color: rgba(255, 255, 255, 0.587);
+    border-radius: 10px;
+    /* padding: 12px 200px; */
+    margin: 8px 0;
+    max-width: 65em;
+    min-width: 65em;
+    max-height: 8em;
+    min-height: 6em;
+    box-sizing: border-box;
+    font-size: 15;
+    font-family: poppins;
 }
 
 .comment-btn:hover{

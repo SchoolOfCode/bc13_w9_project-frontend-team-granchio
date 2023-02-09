@@ -1,10 +1,10 @@
 import { useState, useContext } from "react";
-import "./create-comment.css"
-import {UserContext} from '../App/App.js'
+import "./create-comment.css";
+import { UserContext } from "../App/App.js";
 
 function CreateComment(props) {
   const [text, setText] = useState("");
-  const setIsShown = useContext(UserContext)
+  const setIsShown = useContext(UserContext);
 
   function handleChange(event) {
     setText(event.target.value);
@@ -24,7 +24,7 @@ function CreateComment(props) {
         comment_content: text,
       }),
     }).then((response) => {
-      setIsShown(true)
+      setIsShown(true);
       props.setRerender(!props.rerender);
       setText("");
     });
@@ -34,7 +34,15 @@ function CreateComment(props) {
     <form>
       <h2 className="create-comment-title">
         Create a comment
-        <textarea type="text" value={text} onChange={handleChange}></textarea>
+        <textarea
+          className="custom-input"
+          type="text"
+          value={text}
+          onChange={handleChange}
+          placeholder="Write a comment..."
+        >
+          {" "}
+        </textarea>
       </h2>
       <button className="comment-btn" type="button" onClick={handleClick}>
         Post Comment

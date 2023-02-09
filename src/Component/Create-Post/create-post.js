@@ -38,9 +38,6 @@ function CreatePost(props) {
 
   return (
     <div className="form-container-parent">
-      <div className="profile-container">
-        <div className="profile"></div>
-      </div>
       <form>
         <div className="inputs-parent-container">
           <div className="title-div">
@@ -70,7 +67,6 @@ function CreatePost(props) {
           Submit Post
         </button>
       </div>
-      
     </div>
   );
 }
