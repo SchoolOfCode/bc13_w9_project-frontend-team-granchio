@@ -1,5 +1,7 @@
 # Rubbery Ducky App
 
+[Click here to check it out!](https://granchio4ducky.netlify.app/)
+
 Rubbery Ducky is a platform where you can read, publish and comment completely anonymously. It is a blog aimed at allowing people to express problems, feelings, frustrations or just to have fun among us bootcamper peers. It also has an extra function that has the sole purpose of giving you feedback based on your mood; laughter is never enough!
 
 ## The problem
