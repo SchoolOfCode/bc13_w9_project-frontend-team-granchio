@@ -4,23 +4,25 @@
     border-radius: 20px;
     width: 100%;
     height: auto;
-    padding: 2px;
     display: flex;
-    flex-direction: row;
-    gap: 50px
+    flex-direction: column;
+    align-items: center;
+ 
 }
 input, textarea{
-    border: solid 3px white;
-    background-color: #83bfcd;
+    background-color: rgba(255, 255, 255, 0.587);
     border-radius: 8px;
     /* padding: 12px 200px; */
     margin: 8px 0;
-    height: 3em;
-    width: 40em;
-    max-width: 40em;
+    height: 20em;
+    width: 60em;
+    max-width: 50em;
+    min-width: 50em;
     max-height: 8em;
+    min-height: 6em;
     box-sizing: border-box;
-    font-size: 0.5em;
+    font-size: 15;
+    font-family: poppins;
 }
 
 .profile-container{
@@ -49,7 +51,8 @@ text-align: left;
 
 
 .btn-div{
-align-self: flex-end
+align-self: center;
+padding: 3%;
 
 }
 .profile-container {
@@ -59,9 +62,9 @@ align-self: flex-end
 .button{
 font-size: 0.7em;
     background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
-    border-radius: 20px;
+    border-radius: 10px;
     color: rgba(255, 255, 255, 0.544);
-    width: 10vw;
+    width: 16vw;
     height: 6vh;
     border-radius: 20px;
     font-family: poppins;
@@ -71,16 +74,7 @@ font-size: 0.7em;
 }
 
 .button:hover{
-    font-size: 0.7em;
-        background: linear-gradient(94.59deg, #FFC529 7.45%, #FFA800 90.71%);
-        border-radius: 20px;
         color: white;
-        width: 10vw;
-        height: 6vh;
-        border-radius: 20px;
-        font-family: poppins;
-        font-weight: 800;
-        border: none;
        
     }
 

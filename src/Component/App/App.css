@@ -9,59 +9,39 @@
   background: rgba(33, 158, 188, 1);
   min-height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.angry-duck-btn {
-  background: linear-gradient(94.59deg, #FE9D4B 7.45%, #F17105 90.71%);
-  border-radius: 20px;
-  width: 20vw;
-  height: 10vh;
-  color: white;
-  font-family: poppins;
-  font-size: 1em;
-  
- 
-}
 
 .home-container{
 
-display: flex;
-flex-direction: row;
-background-color: #83bfcd;
-width: 60vw;
-height: 50vh;
-justify-content: center;
+background-color: rgb(33, 158, 188);
+
 }
 
-.home-h2{
-  font-size: 1em;
-}
+/* .home-h2{
+  font-size: 15;
+} */
 
 .home-desc{
   font-size: 0.7em;
 }
 
-.content-wrapper{
-  margin-top: 5vh;
-  margin-bottom: 5vh;
-  display: inline-block;
-}
+
 
 .angry-duck-container{
+  background:  #F17105 ;
   padding: 10px;
-  width: 100vw;
   align-content: center;
   position: relative;
+  border-radius: 10px;
 
 }
 .angry-duck-container:hover{
-  padding: 10px;
-  width: 100vw;
   align-content: center;
   outline: auto;
   position: relative;
@@ -70,17 +50,15 @@ justify-content: center;
 
 
 .anon-duck-container {
-  
+  background:  #FFA800 ;
   padding: 10px;
-  width: 100vw;
   align-content: center;
   position: relative;
+  border-radius: 10px;
 }
 
 .anon-duck-container:hover {
   outline: auto;
-  padding: 10px;
-  width: 100vw;
   align-content: center;
   position: relative;
 }

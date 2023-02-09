@@ -1,20 +1,19 @@
-import { useState, createContext } from 'react';
-import './App.css';
-import Button from '../Button/Button';
-import Forum from '../Forum/forum';
-import AIDuck from './AIDuck/AIDuck.js';
+import { useState, createContext } from "react";
+import "./App.css";
+import Button from "../Button/Button";
+import Forum from "../Forum/forum";
+import AIDuck from "./AIDuck/AIDuck.js";
 export const UserContext = createContext();
 //w3 example of useContext seems to be for components
 //that are in the same file? watch scandiMosh
 //to see if he goes over importing to components that
 //live in another file
 function App() {
-
   const [isShown, setIsShown] = useState(false);
   const [AiDuckShown, setAiDuckShown] = useState(false);
   const [showButtonContainer, setshowButtonContainer] = useState(true);
-  const speechDuck = require('./duckwithspeach.png');
-  const homeDuck = require('./backtohomepageduck.png');
+  const speechDuck = require("./duckwithspeach.png");
+  const homeDuck = require("./backtohomepageduck.png");
   const onClick = () => {
     setIsShown(true);
     setshowButtonContainer(!showButtonContainer);
@@ -45,31 +44,21 @@ function App() {
           onClick={toClickorNotToCLick}
         />
         {showButtonContainer && (
-          <>
-            <div className="home-container">
-              <div className="anon-duck-container">
-                <div className="content-wrapper">
-                  <h2 className="home-h2">CHEER ME UP</h2>
-                  <p className="home-desc">
-                    Submit your mood to your personal duck to brighten your day
-                  </p>
-                  <button className="angry-duck-btn" onClick={onClickDuck}>
-                    Angry Duck
-                  </button>
-                </div>
-              </div>
-              <div className="angry-duck-container">
-                <div className="content-wrapper">
-                  <h2 className="home-h2">SUPPORT EACH OTHER</h2>
-                  <p className="home-desc">
-                    Talk anonymously to your fellow bootcampers and share
-                    struggles
-                  </p>
-                  <Button onClick={onClick} />
-                </div>
-              </div>
+          <div className="home-container">
+            <div className="anon-duck-container" onClick={onClickDuck}>
+              <h2 className="home-h2">CHEER ME UP</h2>
+              <p className="home-desc">
+                Submit your mood to your personal duck to brighten your day
+              </p>
             </div>
-          </>
+            <br />
+            <div className="angry-duck-container" onClick={onClick}>
+              <h2 className="home-h2">SUPPORT EACH OTHER</h2>
+              <p className="home-desc">
+                Talk anonymously to your fellow bootcampers and share struggles
+              </p>
+            </div>
+          </div>
         )}
         {isShown && (
           <UserContext.Provider value={setIsShown}>

@@ -13,9 +13,9 @@ background-color: #83bfcd;
 } 
 .containerALL{
     width:100%;
-    max-width: 900px;
+    max-width: 40em;
     height: 100%;
-    align-items: center;
+    align-self: center;
 
 }
 
