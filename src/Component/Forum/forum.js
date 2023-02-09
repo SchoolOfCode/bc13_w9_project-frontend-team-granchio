@@ -3,7 +3,7 @@ import CreatePost from "../Create-Post/create-post";
 import Post from "../Post/post";
 import "./forum.css";
 import Button from "../Button/Button";
-const REACT_APP_BACKEND_LINK = process.env.REACT_APP_BACKEND_LINK;
+export const REACT_APP_BACKEND_LINK = 'https://granchinooo.onrender.com'
 
 function Forum() {
   const [posts, setPosts] = useState([]);

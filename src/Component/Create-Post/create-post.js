@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./create-post.css";
 import Button from "../Button/Button";
-const REACT_APP_BACKEND_LINK = process.env.REACT_APP_BACKEND_LINK;
+import { REACT_APP_BACKEND_LINK } from "../Forum/forum";
 function CreatePost(props) {
   const [contentText, setContentText] = useState("");
   const [title, setTitle] = useState("");

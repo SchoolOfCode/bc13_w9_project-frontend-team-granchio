@@ -3,7 +3,7 @@ import "./create-comment.css";
 import { UserContext } from "../App/App.js";
 import Button from "../Button/Button";
 
-const REACT_APP_BACKEND_LINK = process.env.REACT_APP_BACKEND_LINK;
+const REACT_APP_BACKEND_LINK = 'https://granchinooo.onrender.com';
 
 function CreateComment(props) {
   const [text, setText] = useState("");
